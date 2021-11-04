@@ -1,0 +1,169 @@
+<script>
+    import {weatherList, forecast} from '../store.js';
+    
+    import Card from './Card.svelte';
+    
+
+    export let weather;
+    
+    const apiKey = process.env.SVELTE_APP_API
+	
+	
+
+    
+    
+    function checkError(response) {
+  if (response.status >= 200 && response.status <= 299) {
+    return response.json();
+  } else {
+    throw Error(response.statusText);
+    
+  }
+}
+    
+    const deleteWeather = (weatherID) => {
+      
+        weatherList.update((currentWeather) => {
+          return currentWeather.filter(weather => weather.id != weatherID)
+          
+        })
+        
+      }
+
+    
+   function  updateWeather (weatherID) {
+     
+      fetch('https://api.openweathermap.org/data/2.5/weather?q='+ weather.name +'&units=metric&appid=' + apiKey)
+  .then(checkError)
+  .then((data) => {
+    console.log(data);
+            
+            weather = data
+            weather.id = weatherID
+            
+
+            console.log(weather);                
+                       
+            
+        })
+  .catch((error) => {
+      alert(error)
+      
+      
+  });
+}
+
+function getForecast() {
+     
+     fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+weather.coord.lat+'&lon='+weather.coord.lon+'&exclude=current,minutely,hourly,alerts&units=metric&appid=' + apiKey)
+ .then(checkError)
+ .then((data) => {
+   console.log(data);
+           
+           $forecast = data
+           $forecast.name = weather.name
+           
+           
+
+           console.log($forecast);                
+                      
+           
+       })
+ .catch((error) => {
+     alert(error)
+     
+     
+ });
+}
+    
+
+   
+      
+    
+</script>
+
+
+
+<main>
+
+<Card>
+
+<div class="item">
+  <div class="top">
+    <button id="refresh" on:click={updateWeather(weather.id)}>S</button> 
+    <img src="http://openweathermap.org/img/wn/{weather.weather[0].icon}@2x.png" alt="{weather.weather[0].description}">
+    <button id="delete" on:click={deleteWeather(weather.id)}>X</button> 
+    
+  </div> 
+  
+  <h2>{weather.name}, {weather.sys.country}</h2>
+  <p>{weather.weather[0].main}</p>
+  <p>{weather.main.temp} 	°C</p>
+  <p>Feels like - {weather.main.feels_like} °C</p>
+  <p>Humidity: {weather.main.humidity}%</p>
+  <button on:click={getForecast(weather.name)}>Get Forecast</button>
+  
+   
+
+</div>
+</Card>
+
+</main>
+
+<style>
+ .item {
+   display: flex;
+   flex-direction: column;
+   padding: 0;
+   justify-content: center;
+   font-weight: bold;
+   
+  
+ }
+
+ img {
+   max-height: 8em;
+   max-width: 8em;
+   align-self: center;
+   padding: 0;
+  
+ }
+
+ button {
+   background-color: transparent;
+   border: none;
+   font-weight: bolder;
+   cursor: pointer;
+   transition: all ease-in-out 300ms;
+
+
+ }
+
+ #delete:hover {
+   color: orangered
+ }
+
+ #refresh:hover {
+   color: greenyellow
+ }
+
+ .top {
+   display: flex;
+   justify-content: space-between;
+   width: 90%;
+   align-self: center;
+   
+  
+ }
+
+#delete {
+  align-self: flex-start;
+}
+
+#refresh {
+  align-self: flex-start;
+  right: 5px;
+  
+}
+
+</style>
