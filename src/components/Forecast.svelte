@@ -52,10 +52,10 @@
     </main>
     {/if}
     
-    <style>
+<style>
         main {
-            height: 96vh;
-            width: 96vw;
+            height: 96%;
+            width: 96%;
             background-color: rgb(47, 148, 216);
             position: absolute;
             display: flex;
@@ -74,4 +74,19 @@
             gap: 2em;
             
         }
+
+        
+@media only screen and (max-width: 600px) {
+
+main {
+    height: fit-content;
+    width: 96%;
+}    
+.days {
+  flex-direction: column;
+  align-items: center;
+
+}
+
+}
     </style>

@@ -39,15 +39,31 @@ function clearAll(){
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 2em;
-      padding: 2em;
-     
+      gap: 1.5em;
+      padding: 2em 0;
+      margin: auto;
+      max-width: 90vw;
+         
      
   }
+
+ 
+
+  
 
   button {
     border-radius: 1em;
     padding: 8px 1em 8px 1em;
   }
+
+@media only screen and (max-width: 600px) {
+
+  .items {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+}
 
 </style>

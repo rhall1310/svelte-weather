@@ -134,7 +134,9 @@ function getWeatherLoc(position) {
 </main>
 
 <style>
-  
+   main {
+     max-width: 100vw;
+   }
    
     h1 {
         color: darkcyan;
@@ -148,6 +150,14 @@ function getWeatherLoc(position) {
         
         
     }
+
+    button:hover:enabled {
+        background-color: aliceblue;
+        border-color: darkcyan;
+        
+        
+    }
+
     input {
         border-radius: 1em;
         text-align: center;

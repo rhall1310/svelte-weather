@@ -25,8 +25,9 @@
 <style>
 	main {
 		text-align: center;
-		width: 100vw;
+		width: 100%;
 		margin: 0;
+		
 		
 	}
 
