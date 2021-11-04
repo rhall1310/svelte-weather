@@ -10,7 +10,7 @@ function clearAll(){
   weatherList.update((currentWeather) => {
         return []
       })
-
+      window.scrollTo(0, 0);
 
 }
 
@@ -55,6 +55,11 @@ function clearAll(){
     border-radius: 1em;
     padding: 8px 1em 8px 1em;
   }
+
+  button:hover {
+  background-color: aliceblue;
+  border-color: darkcyan;
+ }
 
 @media only screen and (max-width: 600px) {
 

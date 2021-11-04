@@ -85,14 +85,16 @@ function getForecast() {
 
 
 <main>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
 
 <Card>
 
 <div class="item">
   <div class="top">
-    <button id="refresh" on:click={updateWeather(weather.id)}>S</button> 
+    <button id="refresh" class="material-icons" on:click={updateWeather(weather.id)}>refresh</button> 
     <img src="http://openweathermap.org/img/wn/{weather.weather[0].icon}@2x.png" alt="{weather.weather[0].description}">
-    <button id="delete" on:click={deleteWeather(weather.id)}>X</button> 
+    <button id="delete" class="material-icons" on:click={deleteWeather(weather.id)}>close</button> 
     
   </div> 
   
@@ -101,7 +103,7 @@ function getForecast() {
   <p>{weather.main.temp} 	°C</p>
   <p>Feels like - {weather.main.feels_like} °C</p>
   <p>Humidity: {weather.main.humidity}%</p>
-  <button on:click={getForecast(weather.name)}>Get Forecast</button>
+  <button id="forecast" on:click={getForecast(weather.name)}>Get Forecast</button>
   
    
 
@@ -137,6 +139,20 @@ function getForecast() {
    transition: all ease-in-out 300ms;
 
 
+ }
+ #forecast{
+   background-color: #f4f4f4;
+   max-width: 12em;
+   align-self: center;
+   border-radius: 2em;
+   padding: 1em;
+   color: darkcyan;
+   border: 1px solid #ccc;
+ }
+
+ #forecast:hover {
+  background-color: aliceblue;
+  border-color: darkcyan;
  }
 
  #delete:hover {

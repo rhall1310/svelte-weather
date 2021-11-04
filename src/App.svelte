@@ -23,6 +23,7 @@
 </main>
 
 <style>
+	
 	main {
 		text-align: center;
 		width: 100%;
