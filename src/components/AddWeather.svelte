@@ -66,7 +66,7 @@ function getLoc() {
     navigator.geolocation.getCurrentPosition(getWeatherLoc);
     
   } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    alert("Geolocation is not supported by this browser.")
   }
 }
 

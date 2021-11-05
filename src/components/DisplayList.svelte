@@ -66,6 +66,7 @@ function clearAll(){
   .items {
     flex-direction: column;
     align-items: center;
+ 
 
   }
 

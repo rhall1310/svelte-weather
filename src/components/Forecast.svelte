@@ -133,6 +133,8 @@ button:hover {
     .days {
         flex-direction: column;
         align-items: center;
+        
+        
 
     }
 
