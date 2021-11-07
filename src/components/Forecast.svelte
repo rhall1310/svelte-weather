@@ -87,6 +87,8 @@ main {
     box-shadow: 5px 3px 3px 5px;
     border-radius: 1em;
     max-height: fit-content;
+    margin-top: 1em;
+   
                
             
     }
