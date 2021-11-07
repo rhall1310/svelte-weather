@@ -27,7 +27,9 @@ function clearAll(){
 {/each}
 </div>
 {#if $weatherList != ''}
+
 <button on:click={clearAll}>Clear All</button>
+
 {/if}
 </main>
 
@@ -46,11 +48,7 @@ function clearAll(){
          
      
   }
-
  
-
-  
-
   button {
     border-radius: 1em;
     padding: 8px 1em 8px 1em;
@@ -60,6 +58,8 @@ function clearAll(){
   background-color: aliceblue;
   border-color: darkcyan;
  }
+
+
 
 @media only screen and (max-width: 600px) {
 

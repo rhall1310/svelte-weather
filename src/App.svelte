@@ -4,6 +4,7 @@
 	import AddWeather from './components/AddWeather.svelte'
 	import DisplayList from './components/DisplayList.svelte';
 	import Forecast from './components/Forecast.svelte';
+	import Footer from './components/Footer.svelte';
 
 
 
@@ -19,7 +20,9 @@
 
 
 	<DisplayList/>
-
+	<footer>
+	<Footer/>
+	</footer>
 </main>
 
 <style>
@@ -31,6 +34,12 @@
 		
 		
 	}
+
+	footer {
+		padding-top: 4em;
+	}
+
+
 
 
 

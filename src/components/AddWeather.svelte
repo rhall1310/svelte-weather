@@ -7,7 +7,10 @@ let weather;
 let cityName ='';
 let input;
 
+
+
 const apiKey = process.env.SVELTE_APP_API
+
 
 
 function checkEnter(event) {
@@ -112,15 +115,25 @@ function getWeatherLoc(position) {
 </script>
 
 <main>
-    <h1>Weather</h1>
+    <div class="title">
+    <img src="assets\stormy-weather-1508939.jpg" alt="header"> 
+    <h1><a href="index.html">Weather</a></h1>
+    </div>
 
-    <p>Search for a location to see the current weather there</p>
+    <p>Search for a location to see the current weather there. You can add multiple locations.</p>
 
-    <input name ="input" type="text"
-    placeholder="Enter a city"
+    {#if $weatherList.length == 0} 
+
+    <input name ="input" type="text" placeholder="Enter a city"
+    
     bind:value={cityName} bind:this={input} on:keyup={checkEnter}>
-   
-
+  
+   {:else}
+    <input name ="input" type="text" placeholder="Enter another city"
+      
+    bind:value={cityName} bind:this={input} on:keyup={checkEnter}>
+ 
+ {/if} 
 
     <button id="submitBtn" type="button" on:click={getWeather} disabled="{cityName == ''}">Get Weather</button>
 
@@ -137,11 +150,40 @@ function getWeatherLoc(position) {
    main {
      max-width: 100vw;
    }
+
+   .title {
+    position: relative;
+    text-align: center;
+ 
+   }
+
+   img {
+     padding-top: 1em;
+     max-height: 10em;
+     border-radius: 3em;
+   }
    
     h1 {
         color: darkcyan;
         font-size: 3rem;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 1em;
+        padding: 0.2em;
         
+    }
+
+    h1:hover {
+      background-color: rgba(240, 248, 255, 0.8);
+      border-color: darkcyan;
+      border: solid 2px;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     button {
@@ -163,4 +205,9 @@ function getWeatherLoc(position) {
         text-align: center;
         min-width: 12em;
     }
+
+    a {
+      color: inherit;
+    }
+    
 </style>

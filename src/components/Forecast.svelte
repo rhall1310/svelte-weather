@@ -1,6 +1,7 @@
 <script>
     
     import {forecast} from '../store.js';
+    import Card from './Card.svelte';
 
     function clearForecast() {
         $forecast = '';
@@ -50,12 +51,16 @@
         <h2>7 day forecast</h2>
         <div class="days">
             {#each Array(7) as item, i}
+            
             <div class="day">
+            <Card>
                 <h3>{next5DaysNames[i]} {getDates(day, i)}</h3>
                 <img src="http://openweathermap.org/img/wn/{$forecast.daily[i].weather[0].icon}@2x.png" alt="{$forecast.daily[i].weather[0].main}">
                 <p>{$forecast.daily[i].weather[0].main}</p>
-                <p>{$forecast.daily[i].temp.day}</p>
+                <p>{$forecast.daily[i].temp.day} °C</p>
+            </Card>
             </div>
+       
             {/each}
         </div>
         
@@ -69,9 +74,9 @@
 
 
 main {
-    height: 96%;
+    min-height: 96%;
     width: 96%;
-    background-color: rgb(47, 148, 216);
+    background-color: #f4f4f4;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -79,21 +84,40 @@ main {
     margin: auto;
     z-index: 999;
     left: 2vw;
-    box-shadow: 5px 3px;
-    margin-bottom: 2em;
-      
-            
+    box-shadow: 5px 3px 3px 5px;
+    border-radius: 1em;
+    max-height: fit-content;
+               
             
     }
+
+h1, h2 {
+    color: darkcyan;
+    padding-bottom: 1em;
+}    
 
 p {
     font-weight: bold;
 }
 
+.day {
+    min-width: 14em;
+    
+   
+}
+
+.day h3, p {
+    padding: 0.5em;
+}
+
 .days {
     display: flex;
-    gap: 2em;
+    gap: 1em;
     height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+   
             
         }
 
@@ -110,7 +134,7 @@ button:hover {
 }
 
 #closeTop {
-    align-self: start;
+    align-self: flex-end;
 }
 
 #closeBot {

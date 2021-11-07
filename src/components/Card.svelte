@@ -5,6 +5,7 @@
         min-width: 12em;
         border-radius: 1em;
         box-shadow: 5px 3px;
+        max-height: 100%;
         
         
     }
