@@ -116,7 +116,7 @@ function getWeatherLoc(position) {
 
 <main>
     <div class="title">
-    <img src="images\stormy-weather-1508939.jpg" alt="header"> 
+    <img src="/images/stormy-weather-1508939.jpg" alt="header"> 
     <h1><a href="index.html">Weather</a></h1>
     </div>
 
