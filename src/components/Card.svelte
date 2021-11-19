@@ -9,6 +9,12 @@
         
         
     }
+
+    @media only screen and (max-width: 800px) {
+        main {
+            width: 30vw;
+        }
+    }
     
 
 </style>

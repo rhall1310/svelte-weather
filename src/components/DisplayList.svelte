@@ -64,8 +64,9 @@ function clearAll(){
 @media only screen and (max-width: 600px) {
 
   .items {
-    flex-direction: column;
+    margin: auto;
     align-items: center;
+    justify-content: center;
  
 
   }
