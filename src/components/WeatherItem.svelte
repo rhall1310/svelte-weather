@@ -168,7 +168,7 @@ function getForecast() {
  .top {
    display: flex;
    justify-content: space-between;
-   width: 90%;
+   
    align-self: center;
    
   
@@ -176,11 +176,12 @@ function getForecast() {
 
 #delete {
   align-self: flex-start;
+  
+ 
 }
 
 #refresh {
   align-self: flex-start;
-  right: 5px;
   
 }
 
