@@ -46,9 +46,8 @@
     border-color: darkcyan;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .items {
-      margin: auto;
       align-items: center;
       justify-content: center;
     }

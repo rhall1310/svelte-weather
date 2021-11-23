@@ -113,10 +113,13 @@
     font-weight: bold;
   }
 
+  .item > h2 {
+    margin: 0.5em;
+  }
+
   img {
-    max-height: 8em;
-    max-width: 8em;
-    align-self: center;
+    max-height: 5em;
+    max-width: 5em;
     padding: 0;
   }
 
@@ -153,8 +156,6 @@
   .top {
     display: flex;
     justify-content: space-between;
-
-    align-self: center;
   }
 
   #delete {
