@@ -95,7 +95,7 @@
       <h2>{weather.name}, {weather.sys.country}</h2>
       <p>{weather.weather[0].main}</p>
       <p>{weather.main.temp} °C</p>
-      <p>Feels like - {weather.main.feels_like} °C</p>
+      <p>Feels like: {weather.main.feels_like} °C</p>
       <p>Humidity: {weather.main.humidity}%</p>
       <button id="forecast" on:click={getForecast(weather.name)}
         >Get Forecast</button
