@@ -57,6 +57,7 @@
 
         $forecast = data;
         $forecast.name = weather.name;
+        $forecast.country = weather.sys.country
 
         console.log($forecast);
       })

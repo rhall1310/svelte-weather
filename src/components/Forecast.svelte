@@ -50,7 +50,7 @@
     <button class="material-icons" id="closeTop" on:click={clearForecast}
       >close</button
     >
-    <h1>{$forecast.name}</h1>
+    <h1>{$forecast.name}, {$forecast.country}</h1>
     <h2>7 day forecast</h2>
     <div class="days">
       {#each Array(7) as item, i}
