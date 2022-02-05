@@ -1,6 +1,6 @@
-*Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
+A weather app that allows users to search for locations around the world and get the current weather there, as well as a 7 day forecast.
 
-*Looking for a shareable component template instead? You can [use SvelteKit for that as well](https://kit.svelte.dev/docs#packaging) or the older [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+Built using Svelte and the Openweathermap API - https://openweathermap.org/
 
 ---
 
