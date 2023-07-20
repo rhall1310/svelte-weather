@@ -14,9 +14,9 @@
 
 <main>
   <div class="items">
-    {#each $weatherList as wther}
+    {#each $weatherList as weather}
       <div in:scale out:fade={{ duration: 500 }}>
-        <WeatherItem weather={wther} />
+        <WeatherItem weather={weather} />
       </div>
     {/each}
   </div>
